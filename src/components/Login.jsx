@@ -3,9 +3,9 @@ import Header from "./Header";
 import { validateData } from "../utils/validate";
 import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../feature/userSlice";
+import { NF_BACKGROUND1, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
 
@@ -13,7 +13,7 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState();
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   const email = useRef();
   const password = useRef();
@@ -43,18 +43,16 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg"
+            displayName: name.current.value, photoURL: USER_AVATAR
           }).then(() => {
             // Profile updated!
             const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
-            navigate('/browse');
           }).catch((error) => {
             // An error occurred
             setErrorMessage(error.message);
           });
 
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -66,9 +64,8 @@ const Login = () => {
       //sign in logic
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user);
-          navigate('/browse');
+          // const user = userCredential.user;
+
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -82,7 +79,7 @@ const Login = () => {
   return (
     <div >
       <div className=" absolute block overflow-hidden  before:block before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-black/50 z-10" >
-        <img className="min-w-full min-h-full  overflow-clip" src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background" />
+        <img className="min-w-full min-h-full  overflow-clip" src={NF_BACKGROUND1} alt="background" />
       </div>
       <Header />
       <div className="before:block before: before:h-24 ">
