@@ -22,6 +22,7 @@
 - Fetched data for Movie Trailer
 - update store with movie trailer video data
 - Embeded the youtube video as background
+- build top picks, trending now section for movies
 
 # features
 
