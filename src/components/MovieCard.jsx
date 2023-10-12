@@ -1,11 +1,16 @@
 import React from 'react';
-import { MOVIE_THUMBNAIL_URL } from '../utils/constants';
+import { DEFAULT_IMAGE, MOVIE_THUMBNAIL_URL } from '../utils/constants';
 
 const MovieCard = ({ thumbnail }) => {
+  console.log();
   return (
     <div>
       <div className='w-52   '>
-        <img className='rounded' src={MOVIE_THUMBNAIL_URL + thumbnail} alt="" />
+        <img
+          className='rounded'
+          src={thumbnail ? `${MOVIE_THUMBNAIL_URL}${thumbnail}` : `${DEFAULT_IMAGE}`}
+          alt=''
+        />
       </div>
     </div>
   );

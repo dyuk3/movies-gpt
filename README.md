@@ -22,7 +22,12 @@
 - Fetched data for Movie Trailer
 - update store with movie trailer video data
 - Embeded the youtube video as background
-- build top picks, trending now section for movies
+- build top picks, trending now and other sections for movies
+- build movie list for different sections
+- build movie card
+- Create GPT Search page
+- Create GPT movie search functionality
+- make API keys secure
 
 # features
 
