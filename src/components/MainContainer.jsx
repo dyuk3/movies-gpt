@@ -1,20 +1,17 @@
-import { useSelector } from "react-redux";
-import VideoBackground from "./VideoBackground";
-import VideoInfo from "./VideoInfo";
+import { useSelector } from 'react-redux';
+import VideoBackground from './VideoBackground';
+import VideoInfo from './VideoInfo';
 
 const MainContainer = () => {
-
-  const movies = useSelector(store => store?.movies?.nowPlayingMovies);
+  const movies = useSelector((store) => store?.movies?.nowPlayingMovies);
   if (!movies) return;
 
   const mainMovie = movies[0];
 
   const { overview, original_title, id } = mainMovie;
 
-  console.log('main render');
-
   return (
-    <div>
+    <div className='pt-[40%] bg-black md:pt-0'>
       <VideoInfo overview={overview} title={original_title} />
       <VideoBackground videoId={id} />
     </div>

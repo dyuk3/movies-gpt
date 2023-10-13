@@ -27,7 +27,8 @@
 - build movie card
 - Create GPT Search page
 - Create GPT movie search functionality
-- make API keys secure
+- make API keys secure with .env
+- make application responsive
 
 # features
 

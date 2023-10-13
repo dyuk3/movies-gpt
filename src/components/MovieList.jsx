@@ -2,11 +2,9 @@ import React from 'react';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ title, movies }) => {
-  console.log(movies);
-
   return (
     <div>
-      <div className='pl-10 py-5'>
+      <div className='md:pl-10 '>
         <h1 className=' py-5 font-bold text-lg'>{title}</h1>
         <div className='flex gap-2 overflow-x-scroll no-scrollbar'>
           {movies?.map((movie) => (

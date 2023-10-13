@@ -51,9 +51,9 @@ const Header = () => {
   };
 
   return (
-    <div className='fixed flex items-center justify-between w-full top-0  z-50 bg-gradient-to-b from-black'>
+    <div className='fixed flex flex-col md:flex-row items-center justify-between w-full top-0  z-50 bg-gradient-to-b from-black '>
       <div className='ml-8'>
-        <img className='w-52  ' src={NETFLIX_LOGO} alt='logo' />
+        <img className='w-52 ' src={NETFLIX_LOGO} alt='logo' />
       </div>
       {user && (
         <div className='flex gap-4'>
@@ -64,7 +64,7 @@ const Header = () => {
             {gptSearchView ? 'Home' : 'GPT Search'}
           </button>
           <img className='w-12 h-12' src={user.photoURL} alt='' />
-          <button className='bg-red-500' onClick={handleSignOut}>
+          <button className='bg-red-500 px-2 rounded text-white mr-4' onClick={handleSignOut}>
             Sign out
           </button>
         </div>

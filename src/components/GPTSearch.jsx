@@ -6,11 +6,13 @@ import { NF_BACKGROUND1 } from '../utils/constants';
 const GPTSearch = () => {
   return (
     <div>
-      <div className='fixed -z-10'>
-        <img className=' ' src={NF_BACKGROUND1} alt='background' />
+      <div className='fixed  -z-10'>
+        <img className='md:h-full object-cover h-screen' src={NF_BACKGROUND1} alt='background' />
       </div>
-      <GPTSearchBar />
-      <GPTSuggestion />
+      <div className='pt-[50%] md:pt-[10%]'>
+        <GPTSearchBar />
+        <GPTSuggestion />
+      </div>
     </div>
   );
 };
