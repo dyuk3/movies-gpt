@@ -1,5 +1,8 @@
 # Movie GPT
 
+Link to live website:- https://leafy-pavlova-aaf61a.netlify.app/
+
+
 - Create react app
 - Configured tailwind css
 - Configure Router
